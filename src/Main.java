@@ -50,6 +50,6 @@ public class Main {
         checkVersion(1, 2015);
         System.out.println("Task 3");
         //Task 3
-        System.out.println("Потребуется дней: " + findDeliveryDays(96));
+        System.out.println("Потребуется дней: " + findDeliveryDays(95));
     }
 }
