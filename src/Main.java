@@ -1,17 +1,13 @@
 import java.time.LocalDate;
 
 public class Main {
-    public static void findALeapYear(int year) {
+    public static void printALeapYearOrNot(int year) {
         int fourthYear = year % 4;
         int hundredthYear = year % 100;
         int fourHundredthYear = year % 400;
-        if (year > 1584 && fourthYear == 0 && hundredthYear != 0) {
+        if (year > 1584 && fourthYear == 0 && hundredthYear != 0 || year > 1584 && fourthYear == 0 && fourHundredthYear == 0) {
             System.out.println(year + " год — високосный год");
-        } else if (year > 1584 && fourthYear == 0 && fourHundredthYear == 0) {
-            System.out.println(year + " год — високосный год");
-        } else if (year > 1584 && hundredthYear != 0) {
-            System.out.println(year + " год — невисокосный год");
-        } else if (year < 1584) {
+        } else {
             System.out.println(year + " год — невисокосный год");
         }
     }
@@ -33,6 +29,7 @@ public class Main {
     }
 
     public static int findDeliveryDays(int deliveryDistance) {
+//        String deliveryRangeTooLarge = "Доставки нет.";
         if (deliveryDistance <= 20) {
             return 1;
         } else if (deliveryDistance < 60) {
@@ -40,14 +37,14 @@ public class Main {
         } else if (deliveryDistance <= 100) {
             return 3;
         } else {
-            return 0;
+            return -1;
         }
     }
 
     public static void main(String[] args) {
         System.out.println("Task 1");
         //Task 1
-        findALeapYear(2021);
+        printALeapYearOrNot(2021);
         System.out.println("Task 2");
         //Task 2
         checkVersion(1, 2015);
