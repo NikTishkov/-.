@@ -5,7 +5,7 @@ public class Main {
         int fourthYear = year % 4;
         int hundredthYear = year % 100;
         int fourHundredthYear = year % 400;
-        if (year > 1584 && fourthYear == 0 && hundredthYear != 0 || year > 1584 && fourthYear == 0 && fourHundredthYear == 0) {
+        if (year > 1584 && fourthYear == 0 && hundredthYear != 0 || fourHundredthYear == 0) {
             System.out.println(year + " год — високосный год");
         } else {
             System.out.println(year + " год — невисокосный год");
@@ -50,6 +50,11 @@ public class Main {
         checkVersion(1, 2015);
         System.out.println("Task 3");
         //Task 3
-        System.out.println("Потребуется дней: " + findDeliveryDays(95));
+        int deliveryDays = findDeliveryDays(95);
+        if (deliveryDays == -1) {
+            System.out.println("Доставки нет.");
+        } else {
+            System.out.println("Потребуется дней: "+ deliveryDays);
+        }
     }
 }
